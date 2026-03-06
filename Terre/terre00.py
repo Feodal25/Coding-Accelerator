@@ -201,18 +201,16 @@
 
 # Exercice Alphabet  Ca maaarche
 
-# alphabet = "abcdefghijklmnopqrstuvwxyz"
-# new_alphabet = ""
+all_letters = "abcdefghijklmnopqrstuvwxyz"
+alphabet = ""
 
-# for i in range(len(alphabet)):
-#     new_alphabet = new_alphabet + alphabet[i]
+for i in range(len(all_letters)):
+    alphabet = alphabet + all_letters[i]
 
-# print(new_alphabet)
-# print(alphabet)
+print(alphabet)
 
 
 #-----------------------
 
-alphabet = ""
-
-for i in range()
+# On test avec ASCII mtn
+#print(ASCII(1))
