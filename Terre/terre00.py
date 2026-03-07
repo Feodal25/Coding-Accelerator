@@ -9,3 +9,13 @@ while count < 26:
     current_letter = chr(first_letter)
 
 print()
+
+#---------
+# Deuxième version : en utilisant une boucle for au lieu de while
+
+alphabet = ""
+
+for i in range(97, 123): 
+    alphabet = alphabet + chr(i)
+
+print(alphabet)
