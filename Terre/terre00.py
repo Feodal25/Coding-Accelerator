@@ -201,16 +201,26 @@
 
 # Exercice Alphabet  Ca maaarche
 
-all_letters = "abcdefghijklmnopqrstuvwxyz"
-alphabet = ""
+# all_letters = "abcdefghijklmnopqrstuvwxyz"
+# alphabet = ""
 
-for i in range(len(all_letters)):
-    alphabet = alphabet + all_letters[i]
+# for i in range(len(all_letters)):
+#     alphabet = alphabet + all_letters[i]
 
-print(alphabet)
+# print(alphabet)
 
 
 #-----------------------
 
 # On test avec ASCII mtn
-#print(ASCII(1))
+first_letter = 97
+current_letter = chr(first_letter)
+count = 0
+
+while count < 26:
+    print(current_letter, end='')
+    first_letter += 1
+    count += 1
+    current_letter = chr(first_letter)
+
+print()
