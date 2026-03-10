@@ -1,5 +1,7 @@
-def foo(first, second, third, *therest):
-    print("First: %s" % first)
-    print("Second: %s" % second)
-    print("Third: %s" % third)
-    print("And all the rest... %s" % list(therest))
+import sys
+args_without_filename = sys.argv[1:]   
+
+index = 0
+while index < len(args_without_filename):
+    print(args_without_filename[index])
+    index += 1
