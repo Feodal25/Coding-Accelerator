@@ -12,7 +12,6 @@ if (arg1.isdecimal() and arg2.isdecimal() and (arg1 >= arg2)) or ((arg1[0] == "-
     arg1 = int(arg1)
     arg2 = int(arg2)
     résultat = arg1 // arg2                                 # "//" = division entière, retourne toujours un int (arrondi vers le bas)
-    résultat = int(résultat)
     reste = arg1 % arg2
 
     print(f"résultat : {résultat}")
