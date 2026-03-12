@@ -1,16 +1,20 @@
 import sys
 args = sys.argv[1:]
-if len(args) != 1:
+def message_erreur():
     print("Tu ne me la mettras pas à l'envers")
     sys.exit()
 
-arg1 = args[0]
+if len(args) != 1:
+    message_erreur()
 
-if (arg1.isdecimal()) or (arg1[0] == "-" and arg1[1:].isdecimal()):
-    arg1 = int(arg1)
-    if arg1 % 2 == 0:
-        print("pair")
-    else:
-        print("impair")
+arg = args[0].removeprefix("-")
+
+if not arg.isdecimal():
+    message_erreur()
+
+int_arg = int(arg)
+
+if int_arg % 2 == 0:
+    print("pair")
 else:
-    print("Tu ne me la mettras pas à l'envers")
+    print("impair")
