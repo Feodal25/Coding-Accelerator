@@ -1,17 +1,21 @@
 import sys
 args = sys.argv[1:]
-arg1 = ""
-alphabet_from_arg1 = ""
-a_ascii = 97
-z_ascii = 123
-
-arg1 = arg1 + args[0]
-arg1_ascii = ord(arg1)
-
-if len(args) != 1 or len(arg1) != 1 or ord(arg1) < a_ascii or ord(arg1) > z_ascii:
+def message_erreur():
     print("wrong entry... You need to give me one letter of the alphabet in lowercap")
-else:
-    for i in range(arg1_ascii, z_ascii):
-        alphabet_from_arg1 = alphabet_from_arg1 + chr(i)
-    print(alphabet_from_arg1)
-    
+    sys.exit()
+
+if len(args) != 1:
+    message_erreur()
+
+code_first_letter = 97
+code_last_letter = 123
+
+if len(args[0]) != 1 or ord(args[0]) < code_first_letter or ord(args[0]) > code_last_letter:
+    message_erreur()
+
+alphabet = ""
+code_begin_letter = ord(args[0])
+
+for i in range(code_begin_letter, code_last_letter):
+    alphabet = alphabet + chr(i)
+print(alphabet)
