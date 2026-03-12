@@ -7,14 +7,10 @@ def message_erreur():
 if len(args) != 1:
     message_erreur()
 
-arg = args[0].removeprefix("-")
-
-if not arg.isdecimal():
+try:
+    if int(args[0]) % 2 == 0:
+        print("pair")
+    else:
+        print("impair")
+except ValueError:
     message_erreur()
-
-int_arg = int(arg)
-
-if int_arg % 2 == 0:
-    print("pair")
-else:
-    print("impair")
