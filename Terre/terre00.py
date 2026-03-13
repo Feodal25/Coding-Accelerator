@@ -1,8 +1,8 @@
+first_letter = 97
+last_letter = 122
 alphabet = ""
-a_ascii_value = 97
-z_ascii_value = 123
 
-for i in range(a_ascii_value, z_ascii_value): 
+for i in range(first_letter, last_letter + 1): 
     alphabet = alphabet + chr(i)
 
 print(alphabet)
