@@ -1,21 +1,25 @@
 import sys
-args = sys.argv[1:]
-def message_erreur():
-    print("wrong entry... You need to give me one letter of the alphabet in lowercap")
-    sys.exit()
+arguments = sys.argv[1:]
 
-if len(args) != 1:
-    message_erreur()
+if len(arguments) != 1:
+	print("argument number incorrect")
+	sys.exit()
 
-code_first_letter = 97
-code_last_letter = 123
+if len(arguments[0]) != 1:
+	print("argument size incorrect")
+	sys.exit()
 
-if len(args[0]) != 1 or ord(args[0]) < code_first_letter or ord(args[0]) > code_last_letter:
-    message_erreur()
+first_letter = 97
+last_letter = 122
 
-alphabet = ""
-code_begin_letter = ord(args[0])
+if ord(arguments[0]) < first_letter or ord(arguments[0]) > last_letter:
+	print("argument has to be a lowercase letter")
+	sys.exit()
 
-for i in range(code_begin_letter, code_last_letter):
-    alphabet = alphabet + chr(i)
-print(alphabet)
+starting_letter = ord(arguments[0])
+result = ""
+
+for i in range(starting_letter, last_letter + 1):
+	result = result + chr(i)
+	
+print(result)
