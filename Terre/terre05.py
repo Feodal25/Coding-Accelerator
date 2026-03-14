@@ -1,27 +1,34 @@
 import sys
+arguments = sys.argv[1:]
 
-def message_erreur():
-    print("erreur.")
-    return
+if len(arguments) != 2:
+    print("arguments number incorrect")
+    sys.exit()
 
-args = sys.argv[1:]
+if not all(argument.isdigit() for argument in arguments):
+    print("Arguments are not positive whole numbers")
+    sys.exit()
 
-if len(args) != 2:
-    message_erreur()
+dividend = int(arguments[0])
+divisor = int(arguments[1])
 
-dividend = args[0]
-divisor = args[1]
+if divisor == 0:
+    print("Divisor can't be equal to 0")
+    sys.exit()
 
-try:
-    dividend = int(dividend)
-    divisor = int(divisor)
+if dividend < divisor:
+    print("Dividend must be higher than divisor")
+    sys.exit()
 
-    if (dividend < divisor):
-        message_erreur()
+result = dividend / divisor
+remainder = dividend % divisor
+rounded_result = ""
+
+for i in str(result):
+    if i == ".":
+        break
     else:
-        result = dividend // divisor
-        reminder = dividend % divisor
-        print(f"résultat : {result}")
-        print(f"reste : {reminder}")
-except (ValueError, ZeroDivisionError):
-    message_erreur()
+        rounded_result += i
+
+print(f"résultat : {rounded_result}")
+print(f"reste : {remainder}")
