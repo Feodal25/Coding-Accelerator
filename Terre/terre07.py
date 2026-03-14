@@ -4,14 +4,14 @@ arguments = sys.argv[1:]
 if len(arguments) != 1:
     sys.exit("écris une chaîne de caractères")
 
-entry = arguments[0]
+argument = arguments[0]
 
-if entry.isdigit():
+if argument.isdigit():
     sys.exit("écris une chaîne de caractères")
 
-entry_length = 0
+count = 0
 
-for i in entry:
-    entry_length += 1
+for caracters in argument:
+    count += 1
 
-print(entry_length)
+print(count)
