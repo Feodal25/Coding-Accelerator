@@ -2,7 +2,7 @@ import sys
 
 def message_erreur():
     print("erreur.")
-    sys.exit()
+    return
 
 args = sys.argv[1:]
 
