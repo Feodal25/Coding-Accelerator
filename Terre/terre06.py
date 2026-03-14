@@ -1,9 +1,14 @@
 import sys
-args = sys.argv[1:]
+arguments = sys.argv[1:]
 
-if len(args) == 0:                                  # pour éviter que si pas d'argument le programme crash
-    print("écris quelque chose tu veux")
+if len(arguments) != 1:
+    print("écris une chaîne de caractères")
     sys.exit()
 
-str_args = " ".join(args)
-print(str_args[::-1])
+entry = arguments[0]
+reverse_entry = ""
+
+for i in range(len(entry) -1, -1, -1):
+    reverse_entry += entry[i]
+
+print(reverse_entry)
