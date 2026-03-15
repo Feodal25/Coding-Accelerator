@@ -8,15 +8,13 @@ if not arguments[0].isdigit():
     sys.exit("argument must be a positif number")
 
 radicand = int(arguments[0])
-impairs = 1
-count = 0
+x = 10
+x_suivant = radicand / 2
 
-while radicand > 0:
-    radicand = radicand - impairs
-    impairs += 2
-    count += 1
+while abs(x_suivant - x) > 0.0001:
+    x = x_suivant
+    x_suivant = (x + radicand/x) / 2
 
-if radicand != 0:                                               # Pour arrondir vers le bas lorsque not carré parfait
-    print(count -1)
-else:
-    print(count)
+result = x_suivant
+
+print(f"{result:.4f}")
