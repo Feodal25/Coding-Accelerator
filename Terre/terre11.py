@@ -12,9 +12,20 @@ if len(time) != 5:
 if not time[:2].isdigit() or not time[3:].isdigit() or time[2] != ":":
     sys.exit("argument must be time in format 24h")
 
-hours = int(time[:time.find(":")])
-minutes = int(time[time.find(":") + 1:])
+hours = ""
+minutes = ""
 
+for char in time:
+    if char == ":":
+        break
+    else:
+        hours += char
+
+for char in time[3:]:
+    minutes += char
+
+hours = int(hours)
+minutes = int(minutes)
 period = ""
 
 if hours >= 12:
