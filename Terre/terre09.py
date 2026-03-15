@@ -16,4 +16,7 @@ while radicand > 0:
     impairs += 2
     count += 1
 
-print(count)
+if radicand != 0:                                               # Pour arrondir vers le bas lorsque not carré parfait
+    print(count -1)
+else:
+    print(count)
