@@ -36,7 +36,7 @@ else:
 if hours > 12:
     hours -= 12
 
-if hours == 0:
-    hours = "00"
+if hours < 10:
+    hours = f"0{hours}"
 
 print(f"{hours}:{minutes}{period}")
