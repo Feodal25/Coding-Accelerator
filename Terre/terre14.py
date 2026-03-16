@@ -4,6 +4,9 @@ arguments = sys.argv[1:]
 if not all(argument.isdigit() for argument in arguments):
     sys.exit("arguments must be positive whole numbers")
 
+if len(arguments) < 2:
+    sys.exit("give me at least 2 numbers")
+
 numbers = [int(n) for n in arguments]
 
 if numbers[0] > numbers[1]:
