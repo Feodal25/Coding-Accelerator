@@ -9,7 +9,7 @@ time = arguments[0]
 if len(time) != 7:
     sys.exit("argument must be the time in format 12h")
 
-if not time[:2].isdigit() or not time[3:5].isdigit() or time[2] != ":" or time[5:7] not in ["AM", "PM"]:
+if not time[:2].isdigit() or not time[3:5].isdigit() or time[2] != ":" or time[5:7] not in ["AM", "am", "PM", "pm"]:
     sys.exit("argument must be time in format 12h")
 
 hours = ""
@@ -32,10 +32,10 @@ hours = int(hours)
 minutes = int(minutes)
 
 
-if period == "PM" and hours < 12:
+if period in ["PM", "pm"] and hours < 12:
     hours += 12
 
-if period == "AM" and hours == 12:
+if period in ["AM", "am"] and hours == 12:
     hours -= 12
 
 if hours < 10:
