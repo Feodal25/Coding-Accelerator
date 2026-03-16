@@ -1,0 +1,1 @@
+print("J'ai terminé l'épreuve de la Terre et c'était un kiiiiiff. Hâte de la suite :)")
