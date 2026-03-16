@@ -7,16 +7,11 @@ if len(arguments) != 3:
 if not all(argument.isdigit() for argument in arguments):
     sys.exit("arguments must be positive whole numbers")
 
-first_number = arguments[0]
-second_number = arguments[1]
-third_number = arguments[2]
+numbers = [int(n) for n in arguments]
 
-
-if third_number > first_number > second_number or second_number > first_number > third_number:
-    print(first_number)
-elif third_number > second_number > first_number or first_number > second_number > third_number:
-    print(second_number)
-elif first_number > third_number > second_number or second_number > third_number > first_number:
-    print(third_number)
+for n in numbers:
+    if min(numbers) < n < max(numbers):
+        print(n)
+        break
 else:
     print("erreur.")
