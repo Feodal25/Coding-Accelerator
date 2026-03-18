@@ -31,6 +31,9 @@ for char in time[5:7]:
 hours = int(hours)
 minutes = int(minutes)
 
+if hours > 12 or minutes > 60:
+    sys.exit("argument must be time in format 12h")
+
 
 if period in ["PM", "pm"] and hours < 12:
     hours += 12

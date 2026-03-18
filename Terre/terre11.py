@@ -28,6 +28,9 @@ hours = int(hours)
 minutes = int(minutes)
 period = ""
 
+if hours > 24 or minutes > 60:
+    sys.exit("time format not right")
+
 if hours >= 12:
     period = "PM"
 else:
