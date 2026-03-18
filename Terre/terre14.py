@@ -9,10 +9,6 @@ if len(arguments) < 2:
 
 numbers = [int(n) for n in arguments]
 
-if numbers[0] > numbers[1]:
-    print("Pas triée!")
-    sys.exit()
-
 for i in range(len(numbers) - 1):
     if numbers[i] > numbers[i+1]:
         print("Pas triée !")
